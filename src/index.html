@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Calcula tu sueldo</title>
+		<link rel="stylesheet" type="text/css" href="css/semantic.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/calculate.css"/>
+		<script src="//code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+		<script src="javascript/semantic.min.js" type="text/javascript"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js"></script>
+		<script src="javascript/calculate.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="ui menu">
+			<a class="item"><i class="home icon"></i>Home</a>
+			<a class="item"><i class="mail icon"></i>Inbox</a>
+		</div>
+
+		<div class="column">
+			<div class="ui raised segment">
+				<div class="ui teal ribbon label">Of course a ribbon</div>
+				<p>Calculate your net salary with the ribbon mode</p>
+				
+				<div class="calculate-form">
+					<div class="ui massive action input">
+						<input type="text" placeholder="Calculate...">
+						<div class="ui icon button"><i class="big euro icon"></i></div>
+					</div>
+				</div>
+
+				<table class="ui padded table segment">
+					<tbody>
+						<tr>
+							<td>Gross salary</td>
+							<td id="gross-salary"></td>
+						</tr>
+						<tr>
+							<td>Net Salary</td>
+							<td id="net-salary"></td>
+						</tr>
+						<tr>
+							<td>Monthly</td>
+							<td id="monthly-salary"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+		<!-- <input type="text" value="40000" id="salary">
+		<button id="calculate">Calculate</button>
+		<p>
+			Your Montly Salary: <span id="result"></span>	
+		</p> -->
+	</body>
+</html>
