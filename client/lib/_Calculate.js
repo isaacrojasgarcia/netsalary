@@ -72,6 +72,23 @@
 		return total;
 	};
 
+	MySalary.prototype.calculateSalary = function () {
+		var temporal = false;
+		if (typeof props !== 'undefined') {
+			temporal = props.temporal || false;	
+		}
+		
+		var ss = this.grossSalary * this.ss(temporal);
+		var irpf = this.irpf();
+		var total = this.grossSalary - ss - irpf;
+
+		return {
+			net: total,
+			irpf: irpf,
+			ss: ss
+		};
+	}
+
 	MySalary.prototype.calculateNetSalary = function (props) {
 		var temporal = false, split = 1;
 		if (typeof props !== 'undefined') {
