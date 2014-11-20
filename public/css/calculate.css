@@ -5,3 +5,8 @@ body {
 .cs-align-right {
 	text-align: right;
 }
+
+#result-chart {
+	height: 500px;
+	width: 500px;
+}
