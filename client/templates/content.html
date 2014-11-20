@@ -1,29 +1,29 @@
 <template name="content">
 	<div class="column">
-		<div class="ui raised segment">
+		<div class="ui green stacked segment">
 			<div class="ui teal ribbon label">Of course a ribbon</div>
 			<p>Calculate your net salary with the ribbon mode</p>
 			
 			<div class="calculate-form">
 				<div class="ui massive action input">
-					<input type="text" placeholder="Calculate...">
+					<input type="text" placeholder="Calculate..." class="calculate-input">
 					<div class="ui icon button"><i class="big euro icon"></i></div>
 				</div>
 			</div>
 
-			<table class="ui padded table segment">
+			<table class="ui padded table">
 				<tbody>
 					<tr>
 						<td>Gross salary:</td>
-						<td id="gross-salary"></td>
+						<td id="gross-salary" class="cs-align-right">0.00</td>
 					</tr>
 					<tr class="positive">
 						<td>Net Salary:</td>
-						<td id="net-salary"></td>
+						<td id="net-salary" class="cs-align-right">0.00</td>
 					</tr>
 					<tr>
 						<td>Monthly:</td>
-						<td id="monthly-salary"></td>
+						<td id="monthly-salary" class="cs-align-right">0.00</td>
 					</tr>
 				</tbody>
 			</table>

@@ -1,9 +1,9 @@
 (function() {
 	'use strict';
-	window.MySalary = new MySalary || Object.create();
+	window.MySalary = MySalary;
 
 	function MySalary(grossSalary) {
-		this.grossSalary = grossSalary;
+		this.grossSalary = grossSalary || 0;
 		this.SS = {
 			temporal: 6.4,
 			permanent: 6.35
@@ -14,6 +14,10 @@
 			// taxpayer: 5151
 		};
 	}
+
+	MySalary.prototype.setSalary = function(salary) {
+		this.grossSalary = salary;
+	};
 
 	MySalary.prototype.ss = function (temporal) {
 		return (temporal ? this.SS.temporal : this.SS.permanent) / 100;
@@ -58,11 +62,11 @@
 		}
 
 		// Law: Deducción general por rendimiento del trabajo 2.652,00
-		for(var i in this.DEDUCTIONS) {
-			total -= this.DEDUCTIONS[i];
-		}
+		// for(var i in this.DEDUCTIONS) {
+		// 	total -= this.DEDUCTIONS[i];
+		// }
 
-		console.log('IRPF', total);
+		// console.log('IRPF', total);
 
 		// TODO: Add IRPF deductions
 		return total;
@@ -78,25 +82,4 @@
 		var total = this.grossSalary - this.grossSalary * this.ss(temporal) - this.irpf();
 		return total / split;
 	}
-
-	// var amount = 51000;
-	// var mySalary = new MySalary(amount);
-	// console.log('Monthly Salary: ' + amount + ' and NOT temporal', mySalary.calculateNetSalary({payments: 12}));
-
-	// console.log($('#calculate'));
-
-	$(document).ready(function() {
-		var gross = $('.calculate-form input').focus().val();
-
-		$('.calculate-form .button').on('click', function() {
-			var f = '0,0.00';
-			var gross = $('.calculate-form input').val();
-			var mySalary = new MySalary(gross);
-
-			$('#gross-salary').html  ( numeral( gross ).format(f) );
-			$('#net-salary').html    ( numeral( mySalary.calculateNetSalary() ).format(f) );
-			$('#monthly-salary').html( numeral( mySalary.calculateNetSalary({payments:12}) ).format(f) );
-		});
-	});
 }());
-
