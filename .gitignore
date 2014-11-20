@@ -1,1 +1,4 @@
 .DS_Store
+.meteor/meteorite
+npm-debug.log
+
